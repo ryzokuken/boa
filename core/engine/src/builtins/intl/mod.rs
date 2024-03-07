@@ -36,10 +36,11 @@ pub(crate) mod locale;
 pub(crate) mod number_format;
 pub(crate) mod plural_rules;
 pub(crate) mod segmenter;
+pub(crate) mod duration_format;
 
 pub(crate) use self::{
     collator::Collator, date_time_format::DateTimeFormat, list_format::ListFormat, locale::Locale,
-    number_format::NumberFormat, plural_rules::PluralRules, segmenter::Segmenter,
+    number_format::NumberFormat, plural_rules::PluralRules, segmenter::Segmenter, duration_format::DurationFormat,
 };
 
 mod options;
@@ -125,6 +126,7 @@ impl IntrinsicObject for Intl {
                     .constructor(),
                 NumberFormat::ATTRIBUTE,
             )
+            .static_property(DurationFormat::NAME, realm.intrinsics().constructors().duration_format().constructor(), DurationFormat::ATTRIBUTE)
             .static_method(
                 Self::get_canonical_locales,
                 js_string!("getCanonicalLocales"),

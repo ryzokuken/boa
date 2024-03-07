@@ -188,6 +188,7 @@ impl StaticJsStrings {
         (CALENDAR, "Temporal.Calendar"),
         (TIMEZONE, "Temporal.TimeZone"),
         (ZONED_DT, "Temporal.ZonedDateTime"),
+        (DURATION_FORMAT, "DurationFormat"),
     }
 }
 

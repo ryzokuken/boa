@@ -180,6 +180,8 @@ pub struct StandardConstructors {
     plural_rules: StandardConstructor,
     #[cfg(feature = "intl")]
     number_format: StandardConstructor,
+    #[cfg(feature = "intl")]
+    duration_format: StandardConstructor,
     #[cfg(feature = "temporal")]
     instant: StandardConstructor,
     #[cfg(feature = "temporal")]
@@ -272,6 +274,8 @@ impl Default for StandardConstructors {
             plural_rules: StandardConstructor::default(),
             #[cfg(feature = "intl")]
             number_format: StandardConstructor::default(),
+            #[cfg(feature = "intl")]
+            duration_format: StandardConstructor::default(),
             #[cfg(feature = "temporal")]
             instant: StandardConstructor::default(),
             #[cfg(feature = "temporal")]
@@ -901,6 +905,19 @@ impl StandardConstructors {
     #[cfg(feature = "intl")]
     pub const fn number_format(&self) -> &StandardConstructor {
         &self.number_format
+    }
+
+    /// Returns the `Intl.DurationFormat` constructor.
+    ///
+    /// More information:
+    ///  - [ECMAScript reference][spec]
+    ///
+    /// [spec]: https://tc39.es/proposal-intl-duration-format/
+    #[inline]
+    #[must_use]
+    #[cfg(feature = "intl")]
+    pub const fn duration_format(&self) -> &StandardConstructor {
+        &self.duration_format
     }
 
     /// Returns the `Temporal.Instant` constructor.
