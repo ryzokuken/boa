@@ -285,6 +285,7 @@ const RAW_STATICS: &[&[u16]] = &[
     utf16!("Segmenter"),
     utf16!("DateTimeFormat"),
     utf16!("NumberFormat"),
+    utf16!("DurationFormat"),
     utf16!("JSON"),
     utf16!("Map"),
     utf16!("Math"),
